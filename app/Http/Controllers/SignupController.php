@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Signup;
+use App\Bug;
 class SignupController extends Controller
 {
     public function sign(){                 //return signUp page
@@ -55,6 +56,28 @@ class SignupController extends Controller
         {
             return view('login');
         }
+    }
+    public function bug(Request $request)  // for checking if session exsists then return 'can i run game' page
+    {
+        if($request->session()->has('u'))
+        {
+            return view('bug_forum');
+        }
+        else
+        {
+            return view('login');
+        }
+    }
+    public function bug1(Request $request)  // for checking if session exsists then return 'can i run game' page
+    {
+        $value = $request->session()->get('u');
+        $obj=new Bug;
+        $obj->user_id=$value;
+        $obj->queries=$request->queries;
+        $obj->solution='No Solution found';
+        $obj->save();
+        return view('news');
+
     }
     public function logout(Request $request)  // for destroying session
     {
@@ -119,4 +142,33 @@ class SignupController extends Controller
             return view('login');
         }
     }
+    public function solution(Request $request) //  for requesting cpu form
+    {   
+        if($request->session()->has('u'))
+
+        {
+            $value = $request->session()->get('u');
+           $solution='No Solution found';
+            $bug = Bug::where('user_id', $value)->get();
+            $bug1 = Bug::where('solution', $solution)->get();
+           
+            return view('solution_forum',compact('bug','bug1','value'));
+        }   
+        else
+        {
+            return view('login');
+        }
+    }
+    public function solution1(Request $request,$user_id,$queries)
+
+    {   
+        $accept = Bug::where('user_id', $user_id)->where('queries', $queries)->update(array('solution'=>$request->comment));
+        echo '<script type="text/javascript">'
+        , 'history.go(-1);'
+        ,'window = window.location.reload();'
+        , '</script>';
+        
+    }
+
+
 }

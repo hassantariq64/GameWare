@@ -13,34 +13,13 @@
 <body>
 <section class="get-in-touch">
    <h1 class="title">Bug & Error Forum</h1>
-   <form class="contact-form row" action="{{url('/bug_forum')}}" method="POST">
+   <form class="contact-form row" action="{{url('/bug')}}" method="POST">
    @csrf
-     <!-- <div class="form-field col-lg-12 ">
-         <input id="user_id" class="input-text js-input" type="text" required>
-         <label class="label" for="company">User Id</label>
-      </div> -->
-
-      <div class="form-field col-lg-12 ">
-         <input id="user_id" name="user_id" class="input-text js-input" type="text" required>
-         <label class="label" for="user_id">User Id</label>
-      </div>
-
+   
       <div class="form-field col-lg-12">
          <input id="query" name="queries" class="input-text js-input" type="text" required>
          <label class="label" for="queries">Please enter your query/issue</label>
       </div>
-       
-      <div class="form-field col-lg-12">
-         <input id="solution" name="solution" class="input-text js-input" type="text" required>
-         <label class="label" for="solution">Solution</label>
-      </div>
-
-      <!-- <div class="form-field col-lg-12">
-      <div class="form-group"> <label for="form_message">Message *</label> <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea> </div>
-
-      </div>
-       -->
-
       <div class="form-field col-lg-12">
          <!-- <input class="submit-btn" type="submit" value="Submit"> -->
          <button class="submit-btn" type="submit" value="Submit">Submit</button>

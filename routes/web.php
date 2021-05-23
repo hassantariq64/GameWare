@@ -50,11 +50,13 @@ Route::post('/game_submit','AdminController@game_insert');
 Route::post('/req_submit','AdminController@comparison');
 Route::post('/reco_submit','AdminController@recommendation');
 Route::post('/vs','AdminController@vs');
-Route::get('/bug_forum','BugController@bug');
-Route::post('bug_forum','BugController@issue_insert');
-
+Route::get('/bug_forum','SignupController@bug');
+Route::post('/bug','SignupController@bug1');
 Route::get('/rec_requirement_form', 'SignupController@logged');
 Route::get('/logout', 'SignupController@logout');
 Route::get('/requirement_form', 'SignupController@rec');
 Route::get('/comparison_form', 'SignupController@comp');
 Route::resource('signups', 'SignupController'); 
+Route::get('/solution_forum', 'SignupController@solution');
+Route::post('/S/{user_id}/{queries}', 'SignupController@solution1');
+
