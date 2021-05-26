@@ -60,3 +60,7 @@ Route::resource('signups', 'SignupController');
 Route::get('/solution_forum', 'SignupController@solution');
 Route::post('/S/{user_id}/{queries}', 'SignupController@solution1');
 
+
+// Admin Panel
+Route::get('/admin_login','AdController@adminlogin');
+Route::get('/dashboard','DashboardController@dashboard');

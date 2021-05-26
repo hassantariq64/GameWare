@@ -124,6 +124,17 @@ class SignupController extends Controller
             return view('login');
         }
     }
+    public function user_name(Request $request) //  for user name
+    {
+        if($request->session()->has('u'))
+        {
+            return view('comparison_form');
+        }
+        else
+        {
+            return view('login');
+        }
+    }
     public function cpu_form(Request $request) //  for requesting cpu form
     {   $name = 'admin';
         if($request->session()->has('u'))

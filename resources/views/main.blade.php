@@ -36,45 +36,54 @@
                 <img src="news\youtube_icon.jpg" alt="Twitter" class="icons">
                 <img src="news\facebook_icon.jpg" alt="Twitter" class="icons">
             </div>
+            <div>
+
+            </div>
         </div>
     </div>
     <header class="nav navbar-expand-sm  navbar-dark header fixed-top">
         <ul class="navbar-nav">
+
             <div class="nav_style"></div>
             <div class="nav_style"></div>
+
             <li class="nav-item active">
             <a class="nav-link" href="{{URL('/')}}"><img class="header_icons" src="news/news.png" alt="News Icon"> NEWS</a>
             </li>
             <div class="nav_style"></div>
             <div class="nav_style"></div>
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('/requirement_form')}}"><img class="header_icons" src="news/search.png" alt="News Icon"> Can I Run
-                    Game?</a>
+                <a class="nav-link" href="{{URL('/requirement_form')}}"><img class="header_icons" src="news/search.png" alt="News Icon"> Can I Run Game?</a>
+            </li>
+
+            <div class="nav_style"></div>
+            <div class="nav_style"></div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/rec_requirement_form')}}"><img class="header_icons" src="news/list.png" alt="News Icon"> Games Recommendation</a>
             </li>
             <div class="nav_style"></div>
             <div class="nav_style"></div>
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('/rec_requirement_form')}}"><img class="header_icons" src="news/list.png" alt="News Icon"> Games
-                    Recommendation</a>
+                <a class="nav-link" href="{{URL('/comparison_form')}}"><img class="header_icons" src="news/hardware.png" alt="News Icon"> Hardware Comparsion</a>
             </li>
+
             <div class="nav_style"></div>
-            <div class="nav_style"></div>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/comparison_form')}}"><img class="header_icons" src="news/hardware.png" alt="News Icon"> Hardware
-                    Comparsion</a>
+            <div class="nav_style"></div>&nbsp&nbsp
+
+            <li class="dropdown">
+                <img class="header_icons" src="news/bug.png" alt="News Icon">
+                <span>Bug'N'Error</span>
+                <div class="dropdown-content-news">
+                 <a  href="{{URL('/bug_forum')}}"> Write Quesetions </a>
+                 <a  href="{{URL('/solution_forum')}}"> My Questions </a>
+                </div>
             </li>
+
+            &nbsp&nbsp
             <div class="nav_style"></div>
-            <div class="nav_style"></div>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/bug_forum')}}"><img class="header_icons" src="news/bug.png" alt="News Icon"> Bugs & Errors forum</a>
-            </li>
-            <div class="nav_style"></div>
-            <div class="nav_style"></div>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/solution_forum')}}"><img class="header_icons" src="news/bug.png" alt="News Icon"> SoLUTION</a>
-            </li>
-            <div class="nav_style"></div>
-            <div class="nav_style"></div>
+            <div class="nav_style"></div>&nbsp&nbsp
+
             <li class="dropdown">
                 <img class="header_icons" src="news/community.png" alt="News Icon">
                 <span>Community</span>
@@ -87,8 +96,11 @@
                     <a href="{{URL('/logout')}}">Logout</a>
                 </div>
             </li>
+
+            &nbsp&nbsp
             <div class="nav_style"></div>
             <div class="nav_style"></div>
+
         </ul>
     </header>
 

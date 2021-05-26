@@ -1,5 +1,6 @@
-
-<!doctype html>
+@extends('main')
+@section('content')
+<!-- <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,58 +12,48 @@
     <link rel="stylesheet" href="css\style6.css">
 </head>
 <body>
-<section class="get-in-touch">
-   <h1 class="title">User Solution</h1>
+<section class="get-in-touch"> -->
+<div class="contact-form">
+<div class="input-fields">
+     <!-- <h1 class="title">User Solution</h1> -->
+     <legend style="text-align-last: center;">My Qusetions</legend>
    @foreach ($bug as $s)
- 
-   <div class="form-field col-lg-12">
-      <p class="bg-primary">{{$s->queries}}</p>
+      <div class="form-field col-lg-12 ">
+       <p class="bg-primary">{{$s->queries}}</p>
       </div>
      <div class="form-field col-lg-12 ">
-     <label class="label" for="comment">Ans</label>
-         <input id="comment" class="input-text js-input" type="text" value="{{$s->solution}}" required>
-      
-      </div>
-
+       <!-- <label class="label" for="comment">Ans</label> -->
+       <input id="comment" class="input-text js-input form-control" type="text" value="{{$s->solution}}" required><br>
+     </div>
    @endforeach  
-
-  
-
-
-<section class="get-in-touch">
-   <h1 class="title">Recent Bug & Error Forum</h1>
+<!-- <section class="get-in-touch"> -->
+   <!-- <h1 class="title">Recent Bug & Error Forum</h1> -->
+   <legend style="text-align-last: center;">Recent Questions</legend>
    @foreach ($bug1 as $s1)
    
    @if($s1->user_id==$value)
-                                <h6 class="text-danger"> </h4>
-                            @else
-                            <form class="contact-form row" action="{{url('/S',[$s1->user_id,$s1->queries])}}" method="POST">
+       <!-- <h6 class="text-danger"></h4> -->
+    @else
+       <form  action="{{url('/S',[$s1->user_id,$s1->queries])}}" method="POST">
    @csrf
-                            <div class="form-field col-lg-12">
-      <p class="bg-primary">{{$s1->queries}}</p>
+      <div class="form-field col-lg-12">
+       <p class="bg-primary">{{$s1->queries}}</p>
       </div>
      <div class="form-field col-lg-12 ">
-         <input id="comment" class="input-text js-input" type="text" name="comment" required>
-         <label class="label" for="comment">Comment</label>
+         <input id="comment" class="input-text js-input form-control" type="text" name="comment" required>
+         <!-- <label class="label" for="comment">Comment</label> -->
       </div>
-
-    
-
-      
-       
-   
-
-      <div class="form-field col-lg-12">
-         <!-- <input class="submit-btn" type="submit" value="Submit"> -->
-         <button class="submit-btn" type="submit" value="Submit">Submit</button>
+      <div class="form-field col-lg-12 ">
+         <!-- <input class="submit-btn" type="submit" value="Submit"> --><br>
+         <button class="submit-btn btn" type="submit" value="Submit">Submit</button>
       </div>
-   </form>
-                           
-                            @endif
-
-   
-   @endforeach  
-</section>
+   </form>                      
+   @endif
+   @endforeach 
+</div>
+</div>
+@endsection
+<!-- </section>
 </body>
-</html>
+</html> -->
  

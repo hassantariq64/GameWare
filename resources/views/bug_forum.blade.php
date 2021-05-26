@@ -1,5 +1,6 @@
-
-<!doctype html>
+@extends('main')
+@section('content')
+<!-- <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,21 +12,27 @@
     <link rel="stylesheet" href="css\style6.css">
 </head>
 <body>
-<section class="get-in-touch">
-   <h1 class="title">Bug & Error Forum</h1>
-   <form class="contact-form row" action="{{url('/bug')}}" method="POST">
+<section class="get-in-touch"> -->
+<div class="contact-form">
+<div class="input-fields">
+   <!-- <h1 class="title">Bug & Error Forum</h1> -->
+   <legend style="text-align-last: center;">Write a Question</legend>
+   <form  action="{{url('/bug')}}" method="POST">
    @csrf
    
       <div class="form-field col-lg-12">
-         <input id="query" name="queries" class="input-text js-input" type="text" required>
-         <label class="label" for="queries">Please enter your query/issue</label>
+         <input id="query" name="queries" class="input-text js-input form-control" type="text" required>
+         <!-- <label class="label" for="queries">Please enter your query/issue</label> -->
       </div>
       <div class="form-field col-lg-12">
-         <!-- <input class="submit-btn" type="submit" value="Submit"> -->
-         <button class="submit-btn" type="submit" value="Submit">Submit</button>
+         <!-- <input class="submit-btn" type="submit" value="Submit"> --><br>
+         <button class="submit-btn btn" type="submit" value="Submit">Submit</button>
       </div>
    </form>
-</section>
+</div>
+</div>
+@endsection
+<!-- </section>
 </body>
-</html>
+</html> -->
  
