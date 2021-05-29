@@ -23,7 +23,7 @@ class AdminController extends Controller
         $obj->l2=$request->l2;
         $obj->l3=$request->l3;
         $obj->save();
-        return view('cpu_form');
+        return view('dashboardcpuform');
     }
     public function gpu_insert(Request $request)   // for inserting gpu data
     {
@@ -35,7 +35,7 @@ class AdminController extends Controller
         $obj->type=$request->type;
         $obj->unit=$request->unit;
         $obj->save();
-        return view('gpu_form');
+        return view('dashboardgpuform');
     }
     public function game_insert(Request $request)   // for inserting gpu data
     {

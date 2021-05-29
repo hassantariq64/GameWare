@@ -57,7 +57,7 @@ class SignupController extends Controller
             return view('login');
         }
     }
-    public function bug(Request $request)  // for checking if session exsists then return 'can i run game' page
+    public function bug(Request $request)  // for bug & error
     {
         if($request->session()->has('u'))
         {
@@ -68,7 +68,7 @@ class SignupController extends Controller
             return view('login');
         }
     }
-    public function bug1(Request $request)  // for checking if session exsists then return 'can i run game' page
+    public function bug1(Request $request)  // 
     {
         $value = $request->session()->get('u');
         $obj=new Bug;
@@ -106,23 +106,10 @@ class SignupController extends Controller
             return view('login');
         }
     }
-    public function gpu_form(Request $request) //  for requesting gpu form
-    {   $name = 'admin';
-        if($request->session()->has('u'))
-
-        {
-            $value = $request->session()->get('u');
-            if($value==$name){
-                return view('gpu_form');
-            }
-            else{
-                return view('login');
-            }
-        }   
-        else
-        {
-            return view('login');
-        }
+    public function gpu_form() //  for requesting gpu form
+    {  
+                return view('dashboardgpuform');
+            
     }
     public function user_name(Request $request) //  for user name
     {
@@ -136,22 +123,9 @@ class SignupController extends Controller
         }
     }
     public function cpu_form(Request $request) //  for requesting cpu form
-    {   $name = 'admin';
-        if($request->session()->has('u'))
-
-        {
-            $value = $request->session()->get('u');
-            if($value==$name){
-                return view('cpu_form');
-            }
-            else{
-                return view('login');
-            }
-        }   
-        else
-        {
-            return view('login');
-        }
+    {   
+                return view('dashboardcpuform');
+          
     }
     public function solution(Request $request) //  for requesting cpu form
     {   

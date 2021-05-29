@@ -62,5 +62,21 @@ Route::post('/S/{user_id}/{queries}', 'SignupController@solution1');
 
 
 // Admin Panel
-Route::get('/admin_login','AdController@adminlogin');
-Route::get('/dashboard','DashboardController@dashboard');
+Route::get('/admin','AdController@admin');
+Route::post('/admiinlogin', 'AdController@adminlogin');
+Route::get('/dashboard','AdController@dashboard');
+
+Route::get('edit/userinformation/{id}','AdController@edituser');
+Route::Post('/updateusers/{id}','AdController@Uuser');
+
+Route::get('delete/userinformation/{id}','AdController@deleteuser');
+
+Route::get('/show/gpu','AdController@showgpu');
+Route::get('/show/cpu','AdController@showcpu');
+Route::get('edit/gpu/{id}','AdController@editgpu');
+Route::get('edit/cpu/{id}','AdController@editcpu');
+Route::get('delete/gpu/{id}','AdController@deletegpu');
+
+Route::get('delete/cpu/{id}','AdController@deletecpu');
+Route::Post('/gpu_update/{id}','AdController@gpu_update');
+Route::Post('/cpu_update/{id}','AdController@cpu_update');

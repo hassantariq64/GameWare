@@ -25,7 +25,7 @@
               <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Home Page</a>
               <div class="bottom-border pb-3">
                 <!-- <img src="images/admin.jpeg" width="50" class="rounded-circle mr-3"> -->
-                <a href="#" class="text-white" >Admin</a>
+                <a href="#" class="text-white">Admin</a>
               </div>
               <ul class="navbar-nav flex-column mt-4">
                 <li class="nav-item"><a href="/dashboard" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
@@ -80,9 +80,11 @@
                     <tr class="text-muted">
                       <th>No</th>
                       <th>Name</th>
-                      <th>Email</th>
-                      <th>Password</th>
-                     
+                      <th>Memory</th>
+                      <th>Bandwidth</th>
+                      <th>Clock</th>
+                      <th>Type</th>
+                      <th>Unit</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -90,15 +92,18 @@
                   @foreach ($users as $user)
                     <tr>
                       <th>{{ $user->id }}</th>
-                      <td>{{ $user->user_name }}</td>
-                      <td>{{ $user->email }}</td>
-                      <td>{{$user->pass}}</td>
+                      <td>{{ $user->name }}</td>
+                      <td>{{ $user->memory }}</td>
+                      <td>{{$user->bandwidth}}</td>
+                      <th>{{ $user->clock }}</th>
+                      <td>{{ $user->type }}</td>
+                      <td>{{ $user->unit }}</td>
                       <td>
               <div class="btn-group" role="group" aria-label="Basic example">
-                  <a href="{{url('\edit\userinformation',[$user->id])}}">
+                  <a href="{{url('\edit\gpu',[$user->id])}}">
                   	<button type="button" class="btn btn-warning">Edit</button>
                   </a>&nbsp;
-                  <a href="{{url('\delete\userinformation',[$user->id])}}">
+                  <a href="{{url('\delete\gpu',[$user->id])}}">
                   	<button type="button" class="btn btn-danger">Delete</button>
                   </a>
                   
@@ -114,10 +119,10 @@
                
                 <!-- end of pagination -->
 
-              </div> </div> </div> </div> </div>
+              </div>
            
-
-    
+              </div></div></div></div></div>
+   
    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
